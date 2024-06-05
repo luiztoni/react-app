@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 
-export function State(props) {
+export default function State(props) {
     const [click, setClick] = useState(0);
     
     const handle = (e) => {
@@ -18,9 +18,9 @@ export function State(props) {
     }
 
     return (
-        <div className="home">
+        <><h1>Home</h1>        <div className="home">
             <section>
-                <h1>Props params value: {props.params.id}</h1>
+                <h1>Props params value: {props.params?.id}</h1>
             </section>
             <br />
             <p>Clicks number: {click}</p>
@@ -31,5 +31,7 @@ export function State(props) {
             <br />
             <a onClick={redirect}>Go to Home page</a>
         </div>
+        </>
+
     )
 }
