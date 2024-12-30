@@ -3,34 +3,36 @@ import { useState } from "react";
 
 
 export default function State(props) {
-    const [click, setClick] = useState(0);
-    
-    const handle = (e) => {
+    const [count, setCount] = useState(0);
+
+    const handleClick = (e) => {
         if (e.target.id === "plus") {
-            setClick(click => click + 1);
+            setCount(count => count + 1);
         } else {
-            setClick(click => click - 1);
+            setCount(count => count - 1);
         }
     }
 
-    const redirect = async () => {
+    const goToHome = async () => {
         window.location.href = "/";
     }
 
     return (
-        <><h1>Home</h1>        <div className="home">
-            <section>
-                <h1>Props params value: {props.params?.id}</h1>
-            </section>
-            <br />
-            <p>Clicks number: {click}</p>
-            <br />
-            <button onClick={handle} id="plus">+</button>
-            <br />
-            <button onClick={handle} id="minus">-</button>
-            <br />
-            <a onClick={redirect}>Go to Home page</a>
-        </div>
+        <>
+            <h1>Home</h1>
+            <div className="home">
+                <section>
+                    <h1>Props params value: {props.params?.id}</h1>
+                </section>
+                <br />
+                <p>Clicks number: {count}</p>
+                <br />
+                <button onClick={handleClick} id="plus">+</button>
+                <br />
+                <button onClick={handleClick} id="minus">-</button>
+                <br />
+                <a onClick={goToHome}>Go to Home page</a>
+            </div>
         </>
 
     )

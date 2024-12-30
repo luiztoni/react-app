@@ -16,7 +16,7 @@ export function FetchApi(props) {
     const [currentState, setCurrentState] = useState('');
     const [product, setProduct] = useState({name:'Smart Phone', year:2014});
 
-    const handle = (event) => {
+    const handleChange = (event) => {
         const { name, value } = event.target;
         setProduct({
           ...product,
@@ -55,8 +55,8 @@ export function FetchApi(props) {
                 <form> 
                     <p>Form</p>
                     <p>{product.name}, {product.year}</p>
-                    <input type="text" name="name" value={product.name} onChange={handle}/>
-                    <input type="text" name="year" value={product.year} onChange={handle}/>
+                    <input type="text" name="name" value={product.name} onChange={handleChange}/>
+                    <input type="text" name="year" value={product.year} onChange={handleChange}/>
                     <input type="number" name="ddd" value={ddd} onChange={e => setDdd(e.target.value)}/>
                     <br />
                     <button onClick={findCities}>Find cities</button>

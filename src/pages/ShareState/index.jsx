@@ -4,21 +4,21 @@ import { SubComponent } from "./components/subcomponent";
 
 export function ShareState() {
 
-    let [state, setState] = useState("Init state")
+    let [prop, setProp] = useState("Init state")
 
     useEffect(() => {
         console.log("load component");
     }, [])
 
-    const handle = (c) => {
-        alert(c);
-        setState(c);
+    const handleAnyFunction = (arg) => {
+        alert(arg);
+        setProp(arg);
     }
 
     return (
         <>
-            <SubComponent myparam1={15} myfuntion={handle}>Children Prop</SubComponent>
-            <p>{state}</p>
+            <SubComponent anyParam={15} anyFuntion={handleAnyFunction}>Children Prop</SubComponent>
+            <p>{prop}</p>
         </>
     )
 }

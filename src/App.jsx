@@ -2,7 +2,7 @@ import './App.css'
 import { lazy , Suspense} from 'react';
 import { Route, Switch } from "wouter";
 
-import { State } from './pages/State/index.jsx';
+import  State  from './pages/State/index.jsx';
 import { ShareState } from './pages/ShareState/index.jsx';
 import { FluxControl } from './pages/FluxControl/index.jsx';
 import { ContextProvider } from './pages/ContextApi/ContextProvider.jsx';

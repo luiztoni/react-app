@@ -5,7 +5,7 @@ import { Theme } from "./context/Theme";
 export function ContextProvider() {
     const [theme, setTheme] = useState('light');
 
-    const handle = () => {
+    const handleClick = () => {
         theme === 'light' ? setTheme('dark') : setTheme('light');
         theme === 'dark' ? setTheme('light') : setTheme('dark');
     }
@@ -13,7 +13,7 @@ export function ContextProvider() {
         <Theme.Provider value={theme}>
             <div>
                 <p>Current theme: {theme}</p>
-                <button onClick={handle} id="id1">Change theme</button>
+                <button onClick={handleClick} id="id1">Change theme</button>
             </div>
             <MidComponent></MidComponent>
         </Theme.Provider>
