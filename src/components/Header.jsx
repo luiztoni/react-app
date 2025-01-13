@@ -1,5 +1,5 @@
 import React from "react";
-import useLocation from "wouter/use-location";
+import { useLocation } from "wouter";
 
 export function Header() {
 	const [location] = useLocation();
